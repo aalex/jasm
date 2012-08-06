@@ -1,0 +1,42 @@
+Jasm
+====
+
+Software for sampling audio-video.
+
+This software has been created as an art project of Alexandre Quessy.
+
+Authors and license
+-------------------
+Authors: Alexandre Quessy
+
+(c) 2012 Alexandre Quessy
+
+License: GPL v3 or above
+
+
+Dependencies
+------------
+Libraries: Clutter Clutter-GST GStreamer liblo
+
+
+Installation and usage
+----------------------
+Here is how to build and install it on Ubuntu Precise 12.04.
+
+Install the dependencies::
+
+  sudo apt-get install build-essential bison flex autotools-dev autoconf-archive
+  sudo apt-get install libclutter-gst-dev libclutter-1.0-dev libglib2.0-dev liblo0-dev
+
+You might need to set up your camera::
+
+  v4l2-ctl --device /dev/video0 --set-standard ntsc
+  v4l2-ctl --device /dev/video0 --set-input 0
+  v4l2-ctl --device /dev/video0 --set-fmt-video=width=640,height=480
+
+And then choose which camera to use with gstreamer-properties::
+
+  gstreamer-properties
+
+Now, you are ready to launch it.
+
