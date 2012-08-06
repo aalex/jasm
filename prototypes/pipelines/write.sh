@@ -1,3 +1,5 @@
 #!/bin/bash
 # WRITE
-gst-launch videotestsrc ! ffmpegcolorspace ! theoraenc ! oggmux ! filesink location=foo.ogg
+# SRC=v4l2src
+SRC=videotestsrc
+gst-launch $SRC ! ffmpegcolorspace ! theoraenc ! oggmux ! filesink location=foo.ogg
